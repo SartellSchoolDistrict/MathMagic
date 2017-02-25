@@ -1,7 +1,8 @@
-h1, p, ul, li {
-  Color: Blue;
-}
-
-body {
+* {
   Color: Black;
 }
+h1 {
+  text-align: center;
+}
+
+
