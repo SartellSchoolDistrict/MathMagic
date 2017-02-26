@@ -18,6 +18,6 @@ function checkTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue + " Seconds";
   if(timerValue > 0){
      timerValue = timerValue - 1;
-    setTimeout(CheckTimer, 1000);
+    setTimeout(checkTimer, 1000);
   }
 }
