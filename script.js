@@ -21,6 +21,7 @@ function CheckTimer(){
   }else if(timerValue === 60){
      document.mainform.timerresult.innerHTML = "Timer: " + timerValue + " Seconds";
   }else if(timerValue > 0){
+   document.getElementById("timerbutton").value = "Stop Timer";
    timerValue -= 1;
    setTimeout(CheckTimer(), 1000);
   }
