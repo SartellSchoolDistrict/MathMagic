@@ -1,5 +1,5 @@
 var timerValue = 60;
-var timerBool = false;
+var timerBool = true;
 function squareNumber(){
   var squared = document.mainform.firstinput.value;
   squared = squared * squared;
@@ -8,8 +8,8 @@ function squareNumber(){
 
 function checkTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
-  if(timerValue > 0){
-     timerValue = timerValue - 1;
+  if(timerValue > 0 && timerBool === true){
+    timerValue = timerValue - 1;
     document.getElementById("timerbutton").value = "Stop Timer";
     setTimeout(checkTimer, 1000);
   }else if(timerValue === 0){
@@ -23,4 +23,14 @@ function resetTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer();
+}
+
+function stopTimer(){
+  timerBool = false;
+  document.getElementById("timerbutton").value = "Start Timer";
+}
+
+function restartTimer(){
+  timerBool = true;
+  checkTimer();
 }
