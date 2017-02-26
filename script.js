@@ -11,6 +11,7 @@ function checkTimer(){
   if(timerValue > 0 && timerBool === true){
     timerValue = timerValue - 1;
     document.getElementById("timerbutton").value = "Stop Timer";
+    document.getElementById("timerbutton").onclick = stopTimer();
     setTimeout(checkTimer, 1000);
   }else if(timerValue === 0){
      document.getElementById("timerbutton").value = "Reset Timer";
