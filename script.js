@@ -15,5 +15,13 @@ function switchTimerBool(){
 }
 
 function CheckTimer(){
-  document.mainform.timer
+  document.mainform.timerresult.innerHTML = "Timer: " + timerValue + " Seconds";
+  if(timerValue === 0){
+     document.getElementById("timerbutton").value = "Reset Timer";
+  }else if(timerValue === 60){
+     document.mainform.timerresult.innerHTML = "Timer: " + timerValue + " Seconds";
+  }else if(timerValue > 0){
+   timerValue -= 1;
+   setTimeout(CheckTimer(), 1000);
+  }
 }
