@@ -17,7 +17,7 @@ function switchTimerBool(){
 function CheckTimer(){
   document.mainform.getElementById("timerresult").innerHTML = "Timer: " + timerValue + " Seconds";
   if(timerValue > 0){
-     timerValue -= 1;
+     timerValue = timerValue - 1;
     setTimeout(CheckTimer, 1000);
   }
 }
