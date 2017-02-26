@@ -15,7 +15,7 @@ function switchTimerBool(){
 }
 
 function checkTimer(){
-  document.getElementById("timerresult").innerHTML = "Timer " + timerValue;
+  document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   if(timerValue > 0){
      timerValue = timerValue - 1;
     setTimeout(checkTimer, 1000);
