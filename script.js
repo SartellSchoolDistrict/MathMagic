@@ -6,18 +6,21 @@ function squareNumber(){
   document.getElementById("result").innerHTML = "Result: " + squared;
 }
 
-function switchTimerBool(){
-  if(timerBool === true){
-     timerBool = false;
-  }else if(timerBool === false){
-     timerBool = true;
-  }
-}
-
 function checkTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   if(timerValue > 0){
      timerValue = timerValue - 1;
+    document.getElementById("timerbutton").value = "Stop Timer";
     setTimeout(checkTimer, 1000);
+  }else if(timerValue === 0){
+     document.getElementById("timerbutton").value = "Reset Timer";
+    document.getElementById("timerbutton").onclick = "resetTimer();";
   }
+}
+
+function resetTimer(){
+  timerValue = 60;
+  document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
+  document.getElementById("timerbutton").value = "Start Timer";
+  document.getElementById("timerbutton").onclick = "checkTimer();";
 }
