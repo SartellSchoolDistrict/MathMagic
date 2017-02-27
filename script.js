@@ -23,6 +23,7 @@ function checkTimer(){
 }
 
 function resetTimer(){
+  timerBool = false;
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
