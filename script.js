@@ -27,7 +27,7 @@ function resetTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
-  timerValue = 60;
+  
 }
 
 function stopTimer(){
