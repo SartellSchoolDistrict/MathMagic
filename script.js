@@ -22,11 +22,11 @@ function checkTimer(){
 }
 
 function resetTimer(){
-  timerValue = 60;
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
   timerBool = true;
+  timerValue = 60;
 }
 
 function stopTimer(){
