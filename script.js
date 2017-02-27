@@ -7,7 +7,6 @@ function squareNumber(){
 }
 
 function checkTimer(){
-  timerBool = true;
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   if(timerValue > 0 && timerBool === true){
     timerValue = timerValue - 1;
@@ -20,6 +19,7 @@ function checkTimer(){
     document.getElementById("timerbutton").onclick = resetTimer;
     setTimeout(checkTimer, 100);
   }
+   timerBool = true;
 }
 
 function resetTimer(){
