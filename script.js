@@ -13,7 +13,7 @@ var timerBool = true;
   setInterval(Update(), 10);
 }*/ 
 
-function squareNumber(){
+function squareNumber(){//SQUARES A NUMBER FROM THE FIRST INPUT BOX  
   var squared = document.mainform.firstinput.value;
   squared = squared * squared;
   document.getElementById("result").innerHTML = "Result: " + squared;
