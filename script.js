@@ -31,8 +31,9 @@ function checkTimer(){
      document.getElementById("timerbutton").value = "Reset Timer";
     document.getElementById("timerbutton").onclick = resetTimer;
     setTimeout(checkTimer, 100);
-  }
+  }else{
    timerBool = true;
+  }
 }
 
 function resetTimer(){
