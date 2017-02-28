@@ -1,4 +1,5 @@
 var timerValue = 60;
+alert("TimerValue set to 60");
 var timerBool = true;
 function squareNumber(){
   var squared = document.mainform.firstinput.value;
