@@ -1,5 +1,4 @@
 var timerValue = 60;
-alert("TimerValue set to 60");
 var timerBool = true;
 function squareNumber(){
   var squared = document.mainform.firstinput.value;
@@ -28,7 +27,7 @@ function resetTimer(){
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
-  
+  timerValue = 60;
 }
 
 function stopTimer(){
