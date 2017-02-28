@@ -31,15 +31,16 @@ function checkTimer(){
     document.getElementById("timerbutton").onclick = resetTimer;
     setTimeout(checkTimer, 100);
   }
-   timerBool = true;
+   //timerBool = true;
 }
 
 function resetTimer(){
-  timerBool = false;
+  //timerBool = false;
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
   timerValue = 60;
+  timerBool = true;
 }
 
 function stopTimer(){
