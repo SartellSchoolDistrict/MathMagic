@@ -19,7 +19,7 @@ function checkTimer(){
     document.getElementById("timerbutton").onclick = resetTimer;
     setTimeout(checkTimer, 100);
   }
-   timerBool = true;
+   //timerBool = true;
 }
 
 function resetTimer(){
