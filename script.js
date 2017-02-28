@@ -1,10 +1,11 @@
-Start();
+var timerValue = 60;
+var timerBool = true;
 
-function  Start(){
+/*function  Start(){
   //Called on window open. Use this insted of space above to keep more organized
   var timerValue = 60;
   var timerBool = true;
-}
+}*/
 
 /*function Update(){ NOT NEEDED YET
   
