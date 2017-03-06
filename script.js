@@ -1,6 +1,7 @@
 var timerValue = 60;
 var timerBool = true;
-var doneQuestions = new Array(9);
+var doneQuestions = new Array(9);]
+var toCheck = 0;
 /*function  Start(){
   //Called on window open. Use this insted of space above to keep more organized
   var timerValue = 60;
@@ -61,15 +62,22 @@ function getRandomNumber(){
   return x;
 }
 
-
-
-
-
-function startQuestions(){
+function checkArrayQuestions(num){
+  return num === toCheck;
   
+  
+}
+function startQuestions(){
+  QuestionMain(10);
 }
 
 function QuestionMain(var blockNumber){
-  
+  string numToUse = getRandomNumber();
+  toCheck = numToUse.toInt();
+  if(!doneQuestions.some(checkArrayQuestions)){
+    document.getElementById("Question").innerHTML = blockNumber.toString() + " X " + numToUse;
+  }else{
+    document.getElementById("Question").innerHTML = "O No!"
+  }
 }
 
