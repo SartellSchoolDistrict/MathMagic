@@ -2,18 +2,6 @@ var timerValue = 60;
 var timerBool = true;
 var doneQuestions = new Array(9);
 var toCheck = 0;
-//var keepQuestion = false;
-/*function  Start(){
-  //Called on window open. Use this insted of space above to keep more organized
-  var timerValue = 60;
-  var timerBool = true;
-}*/
-
-/*function Update(){ NOT NEEDED YET
-  
-  //Runs Update every 10 miliseconds. Use Update to make contantly updating things.
-  setInterval(Update(), 10);
-}*/ 
 
 function squareNumber(){//SQUARES A NUMBER FROM THE FIRST INPUT BOX  
   var squared = document.mainform.firstinput.value;
@@ -44,7 +32,7 @@ function resetTimer(){
   document.getElementById("timerbutton").value = "Start Timer";
   document.getElementById("timerbutton").onclick = checkTimer;
   timerValue = 60;
-  //timerBool = true;
+  timerBool = true;
 }
 
 function stopTimer(){
@@ -64,14 +52,14 @@ function getRandomNumber(){
 }
 
 function startQuestions(){
-  //keepQuestion = true;
+ 
   displayQuestions();
 }
 
 function displayQuestions(){
- // if(keepQuestion === true){
+ 
     toCheck = getRandomNumber();
     document.getElementById("Question").innerHTML = toCheck.toString();
-    //keepQuestion = false;
-  //}
+    
+  
 }
