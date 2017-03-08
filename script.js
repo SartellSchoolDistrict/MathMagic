@@ -63,3 +63,15 @@ function displayQuestions(){
     
   
 }
+
+function checkArray(a[], checkNum){
+  for(i = 0; i < a.length; i++){
+    if(a[i] === checkNum){
+      return true;
+      break;
+    }else{
+       continue;
+    }
+    return true;
+  }
+}
