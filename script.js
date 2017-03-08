@@ -1,7 +1,7 @@
 var timerValue = 60;
 var timerBool = true;
 var doneQuestions = [];
-doneQuestions.length = 9;
+doneQuestions[9] = 0;
 var toCheck = 0;
 var numUsed = 0;
 
