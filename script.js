@@ -64,14 +64,14 @@ function getRandomNumber(){
 }
 
 function startQuestions(){
-  keepQuestion = true;
+  //keepQuestion = true;
   displayQuestions();
 }
 
 function displayQuestions(){
-  if(keepQuestion === true){
+ // if(keepQuestion === true){
     toCheck = getRandomNumber();
     document.getElementById("Question").innerHTML = toCheck.toString();
-    keepQuestion = false;
-  }
+    //keepQuestion = false;
+  //}
 }
