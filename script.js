@@ -60,7 +60,6 @@ function startQuestions(){
 
 function displayQuestions(){
     toCheck = getRandomNumber();
-    document.getElementById("Question").innerHTML = toCheck.toString();
   if(checkArray(doneQuestions[], toCheck)){
     displayQuestions();
   }else{
