@@ -61,6 +61,7 @@ function startQuestions(){
 function displayQuestions(){
     document.getElementById("ErrorText").innerHTML += "Display Called ";
     toCheck = getRandomNumber();
+   document.getElementById("ErrorText").innerHTML += "CHECK NUM" + toCheck.toString(); 
   if(checkArray(toCheck)){
     document.getElementById("ErrorText").innerHTML += "Display True";
     displayQuestions();
