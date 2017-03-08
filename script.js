@@ -64,7 +64,7 @@ function getRandomNumber(){
 }
 
 function startQuestions(){
-  //keepQuestion = true;
+  keepQuestion = true;
   displayQuestions();
 }
 
