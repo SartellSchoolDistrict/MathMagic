@@ -2,7 +2,7 @@ var timerValue = 60;
 var timerBool = true;
 var doneQuestions = new Array(9);
 var toCheck = 0;
-var keepQuestion = false;
+//var keepQuestion = false;
 /*function  Start(){
   //Called on window open. Use this insted of space above to keep more organized
   var timerValue = 60;
