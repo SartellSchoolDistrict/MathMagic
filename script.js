@@ -2,7 +2,7 @@ var timerValue = 60;
 var timerBool = true;
 var doneQuestions = new Array(9);
 var toCheck = 0;
-var keepQuestion = false;
+var keepQuestion = 0;
 /*function  Start(){
   //Called on window open. Use this insted of space above to keep more organized
   var timerValue = 60;
@@ -64,14 +64,14 @@ function getRandomNumber(){
 }
 
 function startQuestions(){
-  keepQuestion = true;
+  keepQuestion = 1;
   displayQuestions();
 }
 
 function displayQuestions(){
-  if(keepQuestion){
+  if(keepQuestion === 1){
     toCheck = getRandomNumber();
     document.getElementById("Question").innerHTML = toCheck.toString();
-    keepQuestion = false;
+    keepQuestion = 0;
   }
 }
