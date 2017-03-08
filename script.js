@@ -26,12 +26,12 @@ function checkTimer(){
   if(timerValue > 0 && timerBool === true){
     timerValue = timerValue - 1;
     document.getElementById("timerbutton").value = "Stop Timer";
-    document.getElementById("timerbutton").onclick = "stopTimer();";
+    document.getElementById("timerbutton").onclick = stopTimer;
     setTimeout(checkTimer, 1000);
   }else if(timerValue === 0){
     timerBool = false;
      document.getElementById("timerbutton").value = "Reset Timer";
-    document.getElementById("timerbutton").onclick = "resetTimer();";
+    document.getElementById("timerbutton").onclick = resetTimer
     setTimeout(checkTimer, 100);
   }else{
    timerBool = true;
@@ -42,7 +42,7 @@ function resetTimer(){
   timerBool = false;
   document.getElementById("timerresult").innerHTML = "Timer: " + timerValue;
   document.getElementById("timerbutton").value = "Start Timer";
-  document.getElementById("timerbutton").onclick = "checkTimer();";
+  document.getElementById("timerbutton").onclick = checkTimer;
   timerValue = 60;
   //timerBool = true;
 }
@@ -50,7 +50,7 @@ function resetTimer(){
 function stopTimer(){
   timerBool = false;
   document.getElementById("timerbutton").value = "Start Timer";
-  document.getElementById("timerbutton").onclick = "restartTimer();"
+  document.getElementById("timerbutton").onclick = restartTimer;
 }
 
 function restartTimer(){
