@@ -1,6 +1,6 @@
 var timerValue = 60;
 var timerBool = true;
-var doneQuestions = new Array(9);
+//var doneQuestions = new Array(9);
 var toCheck = 0;
 
 function squareNumber(){//SQUARES A NUMBER FROM THE FIRST INPUT BOX  
