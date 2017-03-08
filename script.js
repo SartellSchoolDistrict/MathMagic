@@ -3,6 +3,7 @@ var timerBool = true;
 var doneQuestions = [];
 doneQuestions.length = 9;
 var toCheck = 0;
+var numUsed = 0;
 
 function squareNumber(){//SQUARES A NUMBER FROM THE FIRST INPUT BOX  
   var squared = document.mainform.firstinput.value;
@@ -64,6 +65,8 @@ function displayQuestions(){
     displayQuestions();
   }else{
     document.getElementById("Question").innerHTML = toCheck.toString();
+    doneQuestion[numUsed] = toCheck;
+    numUsed += 1;
   }
   
 }
