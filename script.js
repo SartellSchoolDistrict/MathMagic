@@ -58,16 +58,16 @@ function startQuestions(){
 
 function displayQuestions(){
     toCheck = getRandomNumber();
- // document.getElementById("Question").innerHTML = toCheck.toString();
-  if(checkArray(doneQuestions[], toCheck)){
+    document.getElementById("Question").innerHTML = toCheck.toString();
+  /*if(checkArray(doneQuestions[], toCheck)){
     displayQuestions();
   }else{
     document.getElementById("Question").innerHTML = toCheck.toString();
-  }
+  }*/
   
 }
 
-function checkArray(a[], checkNum){
+/*function checkArray(a[], checkNum){
   for(i = 0; i < a.length; i++){
     if(a[i] === checkNum){
       return true;
@@ -77,4 +77,4 @@ function checkArray(a[], checkNum){
     }
     return false;
   }
-}
+}*/
