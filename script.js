@@ -54,15 +54,18 @@ function getRandomNumber(){
 }
 
 function startQuestions(){
- 
+  document.getElementById("ErrorText").innerHTML += "Start Called ";
   displayQuestions();
 }
 
 function displayQuestions(){
+    document.getElementById("ErrorText").innerHTML += "Display Called ";
     toCheck = getRandomNumber();
   if(checkArray(doneQuestions[], toCheck)){
+    document.getElementById("ErrorText").innerHTML += "Display True";
     displayQuestions();
   }else{
+    document.getElementById("ErrorText").innerHTML += "Display False";
     document.getElementById("Question").innerHTML = numUsed.toString;  //toCheck.toString();
     doneQuestion[numUsed] = toCheck;
     numUsed += 1;
@@ -71,13 +74,16 @@ function displayQuestions(){
 }
 
 function checkArray(a[], checkNum){
+  document.getElementById("ErrorText").innerHTML += "Check Called ";
   for(i = 0; i < a.length; i++){
     if(a[i] === checkNum){
+      document.getElementById("ErrorText").innerHTML += "Check True ";
       return true;
       break;
     }else{
        continue;
     }
+    document.getElementById("ErrorText").innerHTML += "Check False";
     return false;
   }
 }
