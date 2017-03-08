@@ -63,7 +63,7 @@ function displayQuestions(){
   if(checkArray(doneQuestions[], toCheck)){
     displayQuestions();
   }else{
-    document.getElementById("Question").innerHTML = toCheck.toString();
+    document.getElementById("Question").innerHTML = numUsed.toString;  //toCheck.toString();
     doneQuestion[numUsed] = toCheck;
     numUsed += 1;
   }
