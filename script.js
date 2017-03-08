@@ -57,10 +57,12 @@ function startQuestions(){
 }
 
 function displayQuestions(){
- 
     toCheck = getRandomNumber();
+  if(checkArray(doneQuestions[], toCheck)){
+    displayQuestions();
+  }else{
     document.getElementById("Question").innerHTML = toCheck.toString();
-    
+  }
   
 }
 
