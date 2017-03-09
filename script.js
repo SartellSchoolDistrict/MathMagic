@@ -82,6 +82,7 @@ function checkArray(checkNum){
       return true;
       break;
     }else{
+      document.getElementById("ErrorText").innerHTML += "CONTINUE ";
        continue;
     }
     document.getElementById("ErrorText").innerHTML += "Check False";
