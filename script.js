@@ -75,7 +75,7 @@ function displayQuestions(){
 
 function checkArray(checkNum){
   document.getElementById("ErrorText").innerHTML += "Check Called ";
-  for(i = 0; i < a.length; i++){
+  for(i = 0; i < doneQuestions.length; i++){
     if(doneQuestions[i] === checkNum){
       document.getElementById("ErrorText").innerHTML += "Check True ";
       return true;
