@@ -61,7 +61,7 @@ function displayQuestions(){
     document.getElementById("ErrorText").innerHTML += "Display Called ";
     toCheck = getRandomNumber();
    document.getElementById("ErrorText").innerHTML += "CHECK NUM" + toCheck.toString(); 
-  if(checkArray(toCheck)){
+  if(checkArray()){
     document.getElementById("ErrorText").innerHTML += "Display True";
     displayQuestions();
   }else{
@@ -73,10 +73,10 @@ function displayQuestions(){
   
 }
 
-function checkArray(checkNum){
+function checkArray(){
   document.getElementById("ErrorText").innerHTML += "Check Called ";
   for(i = 0; i < doneQuestions.length; i++){
-    if(doneQuestions[i] === checkNum){
+    if(doneQuestions[i] === toCheck){
       document.getElementById("ErrorText").innerHTML += "Check True ";
       return true;
       break;
