@@ -65,7 +65,7 @@ function displayQuestions(){
     document.getElementById("ErrorText").innerHTML += "Display True";
     displayQuestions();
   }else{
-    document.getElementById("ErrorText").innerHTML += "Display False <br />";
+    document.getElementById("ErrorText").innerHTML += "Display False ";
     document.getElementById("Question").innerHTML = toCheck.toString();
     //doneQuestion[numUsed] = toCheck;
     numUsed += 1;
