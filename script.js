@@ -84,7 +84,7 @@ function checkArray(){
       return true;
       break;
     }else{
-      document.getElementById("ErrorText").innerHTML += "CONTINUE ";
+      document.getElementById("ErrorText").innerHTML += "CONTINUE";
        continue;
     }
     document.getElementById("ErrorText").innerHTML += "Check False";
