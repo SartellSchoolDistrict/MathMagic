@@ -1,7 +1,6 @@
 var timerValue = 60;
 var timerBool = true;
-var doneQuestions = [];
-doneQuestions[9] = 0;
+var doneQuestions = [,,,,,,,,,];
 var toCheck = 0;
 var numUsed = 0;
 
