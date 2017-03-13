@@ -61,7 +61,11 @@ function displayQuestions(){
     document.getElementById("ErrorText").innerHTML += "Display Called ";
     toCheck = getRandomNumber();
    document.getElementById("ErrorText").innerHTML += "CHECK NUM" + toCheck.toString(); 
-  if(checkArray()){
+  if(numUsed === 9){
+     document.getElementById("startbutton").value = "Reset"
+     
+  }
+  else if(checkArray()){
     document.getElementById("ErrorText").innerHTML += "Display True";
     displayQuestions();
   }else{
