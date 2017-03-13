@@ -68,7 +68,7 @@ function displayQuestions(){
     document.getElementById("ErrorText").innerHTML += "Display FalsE ";
     document.getElementById("Question").innerHTML = toCheck.toString();
     document.getElementById("ErrorText").innerHTML += "Num Used" + numUsed;
-    doneQuestion[numUsed] = toCheck;
+    doneQuestions[numUsed] = toCheck;
     document.getElementById("ErrorText").innerHTML += "NOPE YOUR SCREWED";
     numUsed += 1;
     document.getElementById("ErrorText").innerHTML += "Num Used = " + numUsed + "<br />";
