@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MathMagic</title>
-  <link href="style.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-  <h1>Math Magic v0.5.6</h1>
-  <p>This is the Math Magic Webpage <br /> Here I will create:</p>
-  <ul>
-    <li>A math practicing area for kids at my school.</li>
-    <li>and more...</li>
-  </ul>
-  
-  <form name="mainform">
-  <label for="firstinput">Enter Number to Be Squared</label>
-  <input type="text" id="firstinput"><br />
-  <input type="button" value="Square" onclick="squareNumber();"><br />
-  <div id="result">Result: 0</div><br /><br />
-  <div id="timerresult">Timer: 60</div>
-  <input type="button" value="Start Timer" onclick="checkTimer();" id="timerbutton"><br /><br />
-  
-  <input type="button" value="Start" onclick="startQuestions();" id="startbutton"><br/>
-  <div id="Question"><br /></div>
-  <input type="text" id="questioninput"><br />
-  <input type="button" value="Submit" onclick="" id="submitquestionbutton">
-    
-  <br /><br /><br /><div id="ErrorText"></div>
-  </form>
-</body>
-<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MathMagic</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./Scripts/java.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Math Magic</h1>
+      <h3>A Sartell School District Learning Tool</h3>
+    </header>
+    <section id="indexNav">
+      <table>
+        <tr>
+          <td><a href="addition.html">Addition</a></td>
+          <td><a href="multiplication.html">Multiplication</a></td>
+        </tr>
+
+        <tr>
+          <td><a href="subtraction.html">Subtraction</a></td>
+          <td><a href="division.html">Division</a></td>
+        </tr>
+      </table>
+      <h1>Choose a Subject</h1>
+    </section>
+  </section>
+  </body>
+</html>
