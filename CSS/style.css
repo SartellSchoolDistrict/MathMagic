@@ -43,7 +43,7 @@ header h2{
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 50px;
 }
 
 #indexNav li{
@@ -64,13 +64,94 @@ header h2{
   border-spacing: 0px 40px;
 }
 
-
-#indexNav a {
-  font-size: 50px;
-}
-
 #indexNav h1{
   font-size: 80px;
   padding-top: 40px;
+  color: #FFFFFF;
+}
+
+/* Navigation2 */
+
+#navigation2 {
+  background: #35424a;
+  border: #148fce 5px solid;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 20px;
+  padding: 10px;
+  display: block;
+}
+
+#navigation2 table{
+  margin: 0 auto;
+  text-align: center;
+  min-width: 100%;
+}
+
+#navigation2 input {
+  font-size: 50px;
+  padding: 10px;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 60%;
+}
+
+#navigation2 td {
+   min-width: 60%;
+}
+
+#navigation2 a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: left;
+}
+
+/* Problem */
+
+#problem {
+  background: #35424a;
+  border: #148fce 5px solid;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  padding: 10px;
+  color: #FFFFFF;
+  display: none;
+}
+
+/* END SCREEN */
+
+#endScreen {
+  background: #35424a;
+  border: #148fce 5px solid;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  padding: 10px;
+  color: #FFFFFF;
+  display: none;
+}
+
+/* UNDER DEV*/
+#underDev {
+  background: #35424a;
+  border: #148fce 5px solid;
+  min-height: 450px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+#underDev a {
+  text-decoration: none;
   color: #FFFFFF;
 }

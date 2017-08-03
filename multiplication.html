@@ -4,29 +4,65 @@
     <meta charset="utf-8">
     <title>MathMagic</title>
     <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./Scripts/java.js"></script>
+    <script type="text/javascript" src="./Scripts/java.js"></script>
   </head>
   <body>
     <header>
       <h1>Math Magic</h1>
       <h3>A Sartell School District Learning Tool</h3>
     </header>
-    <section id="navigaton1">
-      <button type="button">X1</button>
-      <button type="button">X2</button>
-      <button type="button">X3</button>
-      <button type="button">X4</button>
-      <button type="button">X5</button>
-    </section>
-      <button type="button">X6</button>
-      <button type="button">X7</button>
-      <button type="button">X8</button>
-      <button type="button">X9</button>
-      <button type="button">X10</button>
     <section id="navigation2">
-    <section id="navigation3">
-      <button type="button">Mixed</button>
+      <table>
+        <tr>
+          <td><input type="button" onclick="startMul(1)" value="X1"></td>
+          <td></td>
+          <td><input type="button" onclick="startMul(2)" value="X2"></td>
+        </tr>
+        <tr>
+          <td><input type="button" onclick="startMul(3)" value="X3"></td>
+          <td></td>
+          <td><input type="button" onclick="startMul(4)" value="X4"></td>
+        </tr>
+        <tr>
+          <td><input type="button" onclick="startMul(5)" value="X5"></td>
+          <td></td>
+          <td><input type="button" onclick="startMul(6)" value="X6"></td>
+        </tr>
+        <tr>
+          <td><input type="button" onclick="startMul(7)" value="X7"></td>
+          <td></td>
+          <td><input type="button" onclick="startMul(8)" value="X8"></td>
+        </tr>
+        <tr>
+          <td><input type="button" onclick="startMul(9)" value="X9"></td>
+          <td></td>
+          <td><input type="button" onclick="startMul(10)" value="X10"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="button" onclick="test()" value="Mixed"></td>
+          <td></td>
+        </tr>
+      </table>
+      <a href="index.html">Exit</a>
     </section>
-  </section>
+
+    <section id="problem">
+      <h1>Question <span id="questionNumber"></span></h1>
+      <p><span id="timer"></span> seconds left</p>
+      <p><span id="firstNumber">first</span>
+        <span id="sign">sign</span>
+        <span id="secondNumber">second</span></p>
+        <input id="problemInput" type="text" placeholder="Type Answer Here">
+        <input type="button" value="Submit" onclick="checkMul()">
+        <input type="button" onclick="reset2()" value="Exit">
+    </section>
+
+    <section id="endScreen">
+      <h1>Congratulations</h1>
+      <p>You got <span id="correctNum"></span> correct and <span id="wrongNum"></span> wrong.</p>
+      <input type="button" onclick="reset()" value="Exit">
+    </section>
+
   </body>
 </html>
