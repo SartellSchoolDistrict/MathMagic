@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f4f4f4;
+  color: #FFFFFF;
 }
 
 /* Global */
@@ -18,37 +19,35 @@ body {
 header{
   background: #35424a;
   color: #ffffff;
-  padding-top: 10px;
-  border-bottom: #148fce 5px solid;
+  padding-top: 0.5%;
+  border-bottom: #148fce 0.3125em solid;
 }
 
 header h1{
-  font-size: 30px;
+  font-size: 1.875em;
 }
 
 header h2{
-  font-size: 10px;
+  font-size: 0.625em;
 }
 
 /* Index Navigation */
 #indexNav{
   background: #35424a;
-  border: #148fce 5px solid;
-  min-height: 500px;
-  margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  border: #148fce 0.3125em solid;
+  margin-top: 1.25em;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 #indexNav a {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 3.125em;
 }
 
 #indexNav li{
   display: inline;
-
 }
 
 #indexNav {
@@ -61,12 +60,12 @@ header h2{
   min-height: 70%;
   max-height: 70%;
   margin-top: 40px;
-  border-spacing: 0px 40px;
+  border-spacing: 0px 1.25em;
 }
 
 #indexNav h1{
-  font-size: 80px;
-  padding-top: 40px;
+  font-size: 5em;
+  padding-top: 5%;
   color: #FFFFFF;
 }
 
@@ -74,11 +73,11 @@ header h2{
 
 #navigation2 {
   background: #35424a;
-  border: #148fce 5px solid;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 20px;
-  padding: 10px;
+  border: #148fce 0.3125em solid;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 1.25em;
+  padding: 0.625em;
   display: block;
 }
 
@@ -89,12 +88,13 @@ header h2{
 }
 
 #navigation2 input {
-  font-size: 50px;
-  padding: 10px;
+  font-size: 3em;
+  padding: 0.25em;
   background-color: #148fce;
   border: none;
   color: #FFFFFF;
-  min-width: 60%;
+  min-width: 30%;
+  white-space: normal;
 }
 
 #navigation2 td {
@@ -105,20 +105,25 @@ header h2{
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 3em;
   text-align: left;
+  background-color: #148fce;
+}
+
+#navigation2 input.smaller{
+  font-size: 1.25em;
 }
 
 /* Problem */
 
 #problem {
   background: #35424a;
-  border: #148fce 5px solid;
+  border: #148fce 0.3125em solid;
   text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 50px;
-  padding: 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3.125em;
+  padding: 0.625em;
   color: #FFFFFF;
   display: none;
 }
@@ -127,31 +132,75 @@ header h2{
 
 #endScreen {
   background: #35424a;
-  border: #148fce 5px solid;
+  border: #148fce 0.3125em solid;
   text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 50px;
-  padding: 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3.125em;
+  padding: 0.625em;
   color: #FFFFFF;
+  display: none;
+}
+
+#endScreen input {
+  font-size: 1.25em;
+  padding: 0.625em;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 60%;
+}
+
+/* Wrong answers Screen */
+
+#wrongAnswersScreen {
+  background: #35424a;
+  border: #148fce 0.3125em solid;
+  text-align: center;
+  margin-top: 1.25em;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0.625em;
   display: none;
 }
 
 /* UNDER DEV*/
 #underDev {
   background: #35424a;
-  border: #148fce 5px solid;
-  min-height: 450px;
-  margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  border: #148fce 0.3125em solid;
+  min-height: 12em;
+  margin-top: 1.25em;
+  margin-left: 15%;
+  margin-right: 15%;
   color: #FFFFFF;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5em;
   text-transform: uppercase;
 }
 
 #underDev a {
   text-decoration: none;
   color: #FFFFFF;
+  background-color: #148fce;
+  padding: 0.2em;
+}
+
+/* MEDIA QUERIES*/
+
+@media only screen and (max-width: 580px){
+  body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 440px){
+  body {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 360px){
+  body {
+    font-size: 8px;
+  }
 }

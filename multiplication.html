@@ -15,22 +15,22 @@
       <table>
         <tr>
           <td><input type="button" onclick="startMul(1)" value="X1"></td>
-          <td></td>
+          <td><h1>Selection</h1></td>
           <td><input type="button" onclick="startMul(2)" value="X2"></td>
         </tr>
         <tr>
           <td><input type="button" onclick="startMul(3)" value="X3"></td>
-          <td></td>
+          <td><h1 id="selectionRandom">1-10</h1></td>
           <td><input type="button" onclick="startMul(4)" value="X4"></td>
         </tr>
         <tr>
           <td><input type="button" onclick="startMul(5)" value="X5"></td>
-          <td></td>
+          <td><h1 id="selectionRounds">20 Questions</h1></td>
           <td><input type="button" onclick="startMul(6)" value="X6"></td>
         </tr>
         <tr>
           <td><input type="button" onclick="startMul(7)" value="X7"></td>
-          <td></td>
+          <td><h1 id="selectionTime">1 Minute</h1></td>
           <td><input type="button" onclick="startMul(8)" value="X8"></td>
         </tr>
         <tr>
@@ -42,6 +42,16 @@
           <td></td>
           <td><input type="button" onclick="test()" value="Mixed"></td>
           <td></td>
+        </tr>
+        <tr>
+          <td><input type="button" onclick="randNumTotal = 10; updateSelectionText();" value="1-10"></td>
+          <td></td>
+          <td><input type="button" onclick="randNumTotal = 12; updateSelectionText();" value="1-12"></td>
+        </tr>
+        <tr>
+          <td><input class="smaller" type="button" onclick="timerCount = 60; maxRounds = 20; updateSelectionText();" value="20 Questions 1 Minute"></td>
+          <td></td>
+          <td><input class="smaller" type="button" onclick="timerCount = 180; maxRounds = 100; updateSelectionText();" value="100 Questions 3 Minutes"></td>
         </tr>
       </table>
       <a href="index.html">Exit</a>
@@ -59,9 +69,22 @@
     </section>
 
     <section id="endScreen">
-      <h1>Congratulations</h1>
+      <h1 id="testWrong">Congratulations</h1>
       <p>You got <span id="correctNum"></span> correct and <span id="wrongNum"></span> wrong.</p>
+      <input type="button" value="Show Wrong Answers" onclick="toggleWrongAnswerDisplay(); DisplayWrong(); toggleWrongAnswerDisplay();"><br /><br />
       <input type="button" onclick="reset()" value="Exit">
+    </section>
+
+    <section id="wrongAnswersScreen">
+      <h1>Wrong Answers</h1>
+      <p>
+        <span id="wrongFirstNumber">first</span>
+        <span id="wrongSign">sign</span>
+        <span id="wrongSecondNumber">second</span>
+      </p>
+      <h1>Correct Answer<br /><span id="wrongCorrectAnswer">?</span></h1>
+      <input type="button" value="<" onclick="wrongAnswerSelection--; DisplayWrong();">
+      <input type="button" value=">" onclick="wrongAnswerSelection++; DisplayWrong();">
     </section>
 
   </body>
