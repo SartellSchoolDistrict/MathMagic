@@ -10,6 +10,7 @@ body {
   margin: 0;
   background-color: #f4f4f4;
   color: #FFFFFF;
+  -webkit-appearance: none;
 }
 
 /* Global */
@@ -32,30 +33,30 @@ header h2{
 }
 
 /* Index Navigation */
-#indexNav{
+.indexNav{
   background: #35424a;
   border: #148fce 0.3125em solid;
   margin-top: 1.25em;
   margin-left: 15%;
   margin-right: 15%;
 }
-#indexNav a {
+.indexNav a {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 3.125em;
 }
 
-#indexNav li{
+.indexNav li{
   display: inline;
 }
 
-#indexNav {
+.indexNav {
   text-align: center;
   font-weight: bold;
 }
 
-#indexNav table{
+.indexNav table{
   min-width: 100%;
   min-height: 70%;
   max-height: 70%;
@@ -63,10 +64,14 @@ header h2{
   border-spacing: 0px 1.25em;
 }
 
-#indexNav h1{
+.indexNav h1{
   font-size: 5em;
   padding-top: 5%;
   color: #FFFFFF;
+}
+
+#secondIndex{
+  display: none;
 }
 
 /* Navigation2 */
@@ -186,10 +191,52 @@ header h2{
 }
 
 /* MEDIA QUERIES*/
+@media only screen and (min-width: 1201px){
+  #firstIndex{
+    display: block;
+  }
+  #secondIndex{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .indexNav {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .indexNav {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  .indexNav {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .indexNav {
+    font-size: 8px;
+  }
+}
 
 @media only screen and (max-width: 580px){
   body {
     font-size: 12px;
+  }
+
+  .indexNav {
+    font-size: 6px;
+  }
+  #firstIndex{
+    display: none;
+  }
+  #secondIndex{
+    display: block;
   }
 }
 
@@ -197,10 +244,16 @@ header h2{
   body {
     font-size: 10px;
   }
+  .indexNav {
+    font-size: 4px;
+  }
 }
 
 @media only screen and (max-width: 360px){
   body {
     font-size: 8px;
+  }
+  .indexNav {
+    font-size: 4px;
   }
 }
