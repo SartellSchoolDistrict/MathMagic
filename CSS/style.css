@@ -10,7 +10,11 @@ body {
   margin: 0;
   background-color: #f4f4f4;
   color: #FFFFFF;
+}
+
+input, textarea {
   -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 
 /* Global */
