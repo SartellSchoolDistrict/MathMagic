@@ -2,6 +2,7 @@ var questionDisplayBool = false;
 var navigation2DisplayBool = true;
 var endScreenDisplayBool = false;
 var wrongAnswerDisplayBool = false;
+var settingsDisplayBool = false;
 var rounds = 0;
 var maxRounds = 20;
 var savedNumber = 0;
@@ -10,16 +11,20 @@ var answer = 0;
 var numberCorrect = 0;
 var numberWrong = 0;
 var doneAnswers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var doneAnswers2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var wrongAnswers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var wrongAnswers2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var wrongNumbers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var wrongAnswerSelection = 0;
 var timerCount = 60;
+var savedTimerCount = 60;
 var timing = false;
 var randNumTotal = 10;
 var randNum = 0;
 var savedSign = "?";
 
 function test(){
-  
+
 }
 
 
@@ -64,7 +69,15 @@ function toggleWrongAnswerDisplay(){
   }
 }
 
-
+function toggleSettingsDisplay(){
+  if(settingsDisplayBool){
+    settingsDisplayBool = false;
+    document.getElementById("settingsScreen").style.display = "none";
+  }else if(!settingsDisplayBool){
+    settingsDisplayBool = true;
+    document.getElementById("settingsScreen").style.display = "block";
+  }
+}
 
 
 
@@ -99,6 +112,7 @@ function startMul(number){
   timing = true;
   updateTimer();
   savedSign = "X";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkMul()");
   multiplication(number);
 }
 
@@ -130,12 +144,58 @@ function checkMul(){
   }else {
     console.log("Fail");
     wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
   multiplication(savedNumber);
 }
 
+function startMulMixed(number){
+  console.log("Start");
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "X";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkMulMixed()");
+  multiplicationMixed(number);
+}
 
+function multiplicationMixed(number){
+  savedNumber = Math.floor(Math.random() * randNumTotal)+1;
+  randNum = 0;
+  if(rounds < maxRounds){
+    console.log("MulStart");
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      multiplicationMixed(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(savedNumber, "X", randNum);
+      correctAnswer = randNum * savedNumber;
+      console.log(randNum.toString());
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkMulMixed(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    console.log("Correct");
+  }else {
+    console.log("Fail");
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  multiplicationMixed(savedNumber);
+}
 
 
 
@@ -151,7 +211,6 @@ function checkAnswer(){
     return true;
   }else{
     numberWrong++;
-    //wrongAnswers[rounds] = randNum;
     return false;
   }
 }
@@ -194,12 +253,19 @@ function reset(){
   numberCorrect = 0;
   numberWrong = 0;
   rounds = 0;
-  timerCount = 60;
+  timerCount = savedTimerCount;
+  wrongAnswerSelection = 0;
   for(var i = 0; i < maxRounds; i++){
     doneAnswers[i] = 0;
   }
   for(var i = 0; i < maxRounds; i++){
     wrongAnswers[i] = NULL;
+  }
+  for(var i = 0; i < maxRounds; i++){
+    wrongNumbers[i] = NULL;
+  }
+  for(var i = 0; i < maxRounds; i++){
+    wrongNumbers2[i] = NULL;
   }
 }
 
@@ -210,12 +276,19 @@ function reset2(){
   numberCorrect = 0;
   numberWrong = 0;
   rounds = 0;
-  timerCount = 60;
+  timerCount = savedTimerCount;
+  wrongAnswerSelection = 0;
   for(var i = 0; i < maxRounds; i++){
     doneAnswers[i] = 0;
   }
   for(var i = 0; i < maxRounds; i++){
     wrongAnswers[i] = NULL;
+  }
+  for(var i = 0; i < maxRounds; i++){
+    wrongNumbers[i] = NULL;
+  }
+  for(var i = 0; i < maxRounds; i++){
+    wrongNumbers2[i] = NULL;
   }
 }
 
@@ -260,4 +333,6 @@ function DisplayWrong(){
   document.getElementById("wrongFirstNumber").innerHTML = randNum;
   document.getElementById("wrongSign").innerHTML = savedSign;
   document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+  document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+  document.getElementById("wrongAnswerNumberHere").innerHTML = wrongNumbers[wrongAnswerSelection].toString();
 }

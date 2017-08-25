@@ -123,18 +123,83 @@ header h2{
   font-size: 1.25em;
 }
 
+/* settingsScreen*/
+#settingsScreen {
+  background: #35424a;
+  border: #148fce 0.3125em solid;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 1.25em;
+  padding: 0.625em;
+  display: none;
+}
+
+#settingsScreen table{
+  margin: 0 auto;
+  text-align: center;
+  min-width: 100%;
+}
+
+#settingsScreen input {
+  font-size: 3em;
+  padding: 0.25em;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 30%;
+  white-space: normal;
+}
+
+#settingsScreen td {
+   min-width: 60%;
+}
+
+#settingsScreen a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 3em;
+  text-align: left;
+  background-color: #148fce;
+}
+
+#settingsScreen input.smaller{
+  font-size: 1.25em;
+}
 /* Problem */
 
 #problem {
+  font-size: 1em;
   background: #35424a;
   border: #148fce 0.3125em solid;
   text-align: center;
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 3.125em;
+  margin-top: 2em;
   padding: 0.625em;
   color: #FFFFFF;
   display: none;
+}
+
+#problem input[type=button] {
+  margin-top: 1em;
+  font-size: 2em;
+  padding: 0.25em;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 30%;
+  white-space: normal;
+}
+
+#problem input[type=text] {
+  font-size: 2em;
+  padding: 0.25em;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 30%;
+  white-space: normal;
 }
 
 /* END SCREEN */
@@ -171,6 +236,15 @@ header h2{
   margin-right: 15%;
   padding: 0.625em;
   display: none;
+}
+
+#wrongAnswersScreen input {
+  font-size: 1.25em;
+  padding: 0.625em;
+  background-color: #148fce;
+  border: none;
+  color: #FFFFFF;
+  min-width: 20%;
 }
 
 /* UNDER DEV*/
