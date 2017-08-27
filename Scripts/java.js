@@ -106,7 +106,6 @@ function displayQuestion(first, sign, second){
 
 
 function startMul(number){
-  console.log("Start");
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -120,15 +119,13 @@ function multiplication(number){
   savedNumber = number;
   randNum = 0;
   if(rounds < maxRounds){
-    console.log("MulStart");
     randNum = Math.floor(Math.random() * randNumTotal)+1;
     if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
       multiplication(savedNumber);
     }else{
       doneAnswers[rounds] = randNum;
-      displayQuestion(number, "X", randNum);
+      displayQuestion(randNum, "X", number);
       correctAnswer = randNum * number;
-      console.log(randNum.toString());
       rounds++;
     }
   }else{
@@ -140,9 +137,8 @@ function multiplication(number){
 function checkMul(){
   answer = document.getElementById('problemInput').value;
   if(checkAnswer()){
-    console.log("Correct");
+    /* Correct */
   }else {
-    console.log("Fail");
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
@@ -152,7 +148,6 @@ function checkMul(){
 }
 
 function startMulMixed(number){
-  console.log("Start");
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -166,15 +161,13 @@ function multiplicationMixed(number){
   savedNumber = Math.floor(Math.random() * randNumTotal)+1;
   randNum = 0;
   if(rounds < maxRounds){
-    console.log("MulStart");
     randNum = Math.floor(Math.random() * randNumTotal)+1;
     if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
       multiplicationMixed(savedNumber);
     }else{
       doneAnswers[rounds] = randNum;
-      displayQuestion(savedNumber, "X", randNum);
+      displayQuestion(randNum, "X", savedNumber);
       correctAnswer = randNum * savedNumber;
-      console.log(randNum.toString());
       rounds++;
     }
   }else{
@@ -186,9 +179,8 @@ function multiplicationMixed(number){
 function checkMulMixed(){
   answer = document.getElementById('problemInput').value;
   if(checkAnswer()){
-    console.log("Correct");
+    /* Correct */
   }else {
-    console.log("Fail");
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
@@ -196,6 +188,320 @@ function checkMulMixed(){
   document.getElementById('problemInput').value = "";
   multiplicationMixed(savedNumber);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function startDiv(number){
+  console.log("Start");
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "&#247";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkDiv()");
+  division(number);
+}
+
+function division(number){
+  savedNumber = number;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      division(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "&#247", number);
+      correctAnswer = randNum / number;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkDiv(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  division(savedNumber);
+}
+
+function startDivMixed(number){
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "&#247";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkDivMixed()");
+  divisionMixed(number);
+}
+
+function divisionMixed(number){
+  savedNumber = Math.floor(Math.random() * randNumTotal)+1;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      divisionMixed(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "&#247", savedNumber);
+      correctAnswer = randNum / savedNumber;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkDivMixed(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  divisionMixed(savedNumber);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function startAdd(number){
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "+";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkAdd()");
+  adding(number);
+}
+
+function adding(number){
+  savedNumber = number;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      adding(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "+", number);
+      correctAnswer = randNum + number;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkAdd(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  adding(savedNumber);
+}
+
+function startAddMixed(number){
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "+";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkAddMixed()");
+  addingMixed(number);
+}
+
+function addingMixed(number){
+  savedNumber = Math.floor(Math.random() * randNumTotal)+1;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      addingMixed(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "+", savedNumber);
+      correctAnswer = randNum + savedNumber;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkAddMixed(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  addingMixed(savedNumber);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function startSub(number){
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "-";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkSub()");
+  subtraction(number);
+}
+
+function subtraction(number){
+  savedNumber = number;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      subtraction(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "-", number);
+      correctAnswer = randNum - number;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkSub(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  subtraction(savedNumber);
+}
+
+function startSubMixed(number){
+  toggleProblemDisplay();
+  toggleNavDisplay();
+  timing = true;
+  updateTimer();
+  savedSign = "-";
+  document.getElementById('submitProblemButton').setAttribute("onclick", "checkSubMixed()");
+  subtractionMixed(number);
+}
+
+function subtractionMixed(number){
+  savedNumber = Math.floor(Math.random() * randNumTotal)+1;
+  randNum = 0;
+  if(rounds < maxRounds){
+    randNum = Math.floor(Math.random() * randNumTotal)+1;
+    if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
+      subtractionMixed(savedNumber);
+    }else{
+      doneAnswers[rounds] = randNum;
+      displayQuestion(randNum, "-", savedNumber);
+      correctAnswer = randNum - savedNumber;
+      rounds++;
+    }
+  }else{
+    displayEnd();
+    timing = false;
+  }
+}
+
+function checkSubMixed(){
+  answer = document.getElementById('problemInput').value;
+  if(checkAnswer()){
+    /* Correct */
+  }else {
+    wrongAnswers[numberWrong - 1] = randNum;
+    wrongAnswers2[numberWrong - 1] = savedNumber;
+    wrongNumbers[numberWrong - 1] = rounds;
+  }
+  document.getElementById('problemInput').value = "";
+  subtractionMixed(savedNumber);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -236,6 +542,7 @@ function checkDoneAnswer(toCheck){
 function displayEnd(){
   document.getElementById('correctNum').innerHTML = numberCorrect.toString();
   document.getElementById('wrongNum').innerHTML = numberWrong.toString();
+  document.getElementById('percentHere').innerHTML = Math.ceil(numberCorrect/numberWrong).toString();
   endScreenDisplay();
   toggleProblemDisplay();
 }
@@ -330,9 +637,27 @@ function updateSelectionText(){
 }
 
 function DisplayWrong(){
-  document.getElementById("wrongFirstNumber").innerHTML = randNum;
+  console.log(savedSign);
   document.getElementById("wrongSign").innerHTML = savedSign;
-  document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-  document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+
   document.getElementById("wrongAnswerNumberHere").innerHTML = wrongNumbers[wrongAnswerSelection].toString();
+  if(savedSign == "+"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] + wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "-"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] - wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "&#247"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] / wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "X"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] * wrongAnswers2[wrongAnswerSelection]).toString();
+  }else{
+    document.getElementById('wrongCorrectAnswer').innerHTML = "Calculation Error";
+  }
 }

@@ -14,29 +14,29 @@
     <section id="navigation2">
       <table>
         <tr>
-          <td><input type="button" onclick="startMul(1)" value="X1"></td>
+          <td><input type="button" onclick="startMul(1)" value="X 1"></td>
           <td><h1>Selection</h1></td>
-          <td><input type="button" onclick="startMul(2)" value="X2"></td>
+          <td><input type="button" onclick="startMul(2)" value="X 2"></td>
         </tr>
         <tr>
-          <td><input type="button" onclick="startMul(3)" value="X3"></td>
+          <td><input type="button" onclick="startMul(3)" value="X 3"></td>
           <td><h1 id="selectionRandom">1-10</h1></td>
-          <td><input type="button" onclick="startMul(4)" value="X4"></td>
+          <td><input type="button" onclick="startMul(4)" value="X 4"></td>
         </tr>
         <tr>
-          <td><input type="button" onclick="startMul(5)" value="X5"></td>
+          <td><input type="button" onclick="startMul(5)" value="X 5"></td>
           <td><h1 id="selectionRounds">20 Questions</h1></td>
-          <td><input type="button" onclick="startMul(6)" value="X6"></td>
+          <td><input type="button" onclick="startMul(6)" value="X 6"></td>
         </tr>
         <tr>
-          <td><input type="button" onclick="startMul(7)" value="X7"></td>
+          <td><input type="button" onclick="startMul(7)" value="X 7"></td>
           <td><h1 id="selectionTime">1 Minute</h1></td>
-          <td><input type="button" onclick="startMul(8)" value="X8"></td>
+          <td><input type="button" onclick="startMul(8)" value="X 8"></td>
         </tr>
         <tr>
-          <td><input type="button" onclick="startMul(9)" value="X9"></td>
+          <td><input type="button" onclick="startMul(9)" value="X 9"></td>
           <td></td>
-          <td><input type="button" onclick="startMul(10)" value="X10"></td>
+          <td><input type="button" onclick="startMul(10)" value="X 10"></td>
         </tr>
         <tr>
           <td><input type="button" onclick="startMulMixed(0);" value="Mixed"></td>
@@ -85,6 +85,7 @@
 
     <section id="endScreen">
       <h1 id="testWrong">Congratulations</h1>
+      <p><span id="percentHere"></span>%</p>
       <p>You got <span id="correctNum"></span> correct and <span id="wrongNum"></span> wrong.</p>
       <input type="button" value="Show Wrong Answers" onclick="toggleWrongAnswerDisplay(); DisplayWrong();"><br /><br />
       <input type="button" onclick="reset()" value="Exit">
@@ -97,7 +98,7 @@
         <span id="wrongSign">sign</span>
         <span id="wrongSecondNumber">second</span>
       </p>
-      <h1>Correct Answer<br /><span id="wrongCorrectAnswer">?</span></h1>
+      <h1>Correct Answer<br /><span id="wrongCorrectAnswer"></span></h1>
       <input type="button" value="<" onclick="wrongAnswerSelection--; DisplayWrong();">
       <input type="button" value=">" onclick="wrongAnswerSelection++; DisplayWrong();">
     </section>
