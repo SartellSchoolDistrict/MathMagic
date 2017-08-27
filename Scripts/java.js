@@ -202,7 +202,6 @@ function checkMulMixed(){
 
 
 function startDiv(number){
-  console.log("Start");
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -540,9 +539,11 @@ function checkDoneAnswer(toCheck){
 
 
 function displayEnd(){
+  console.log(numberCorrect);
+  console.log(maxRounds);
   document.getElementById('correctNum').innerHTML = numberCorrect.toString();
   document.getElementById('wrongNum').innerHTML = numberWrong.toString();
-  document.getElementById('percentHere').innerHTML = Math.ceil(numberCorrect/numberWrong).toString();
+  document.getElementById('percentHere').innerHTML = Math.ceil((numberCorrect/maxRounds)*100).toString();
   endScreenDisplay();
   toggleProblemDisplay();
 }
@@ -637,7 +638,6 @@ function updateSelectionText(){
 }
 
 function DisplayWrong(){
-  console.log(savedSign);
   document.getElementById("wrongSign").innerHTML = savedSign;
 
   document.getElementById("wrongAnswerNumberHere").innerHTML = wrongNumbers[wrongAnswerSelection].toString();
