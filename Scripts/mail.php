@@ -1,3 +1,6 @@
 <?php
-  mail("johnrivard23@gmail.com", $_GET["subject"], $_GET["message"] );
+  $subject = $_GET["subject"];
+  $message = $_GET["message"];
+
+  mail("johnrivard23@gmail.com", $subject, $message);
  ?>
