@@ -150,6 +150,7 @@ header h2{
   white-space: normal;
 }
 
+
 #settingsScreen td {
    min-width: 60%;
 }
@@ -166,6 +167,20 @@ header h2{
 #settingsScreen input.smaller{
   font-size: 1.25em;
 }
+
+
+.settingsHighlight {
+  background-color: #148fce;
+  color: #148fce;
+}
+
+.settingsStopHighlight {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+
+
 /* Problem */
 
 #problem {

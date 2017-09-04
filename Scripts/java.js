@@ -112,6 +112,7 @@ function startMul(number){
   updateTimer();
   savedSign = "X";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkMul()");
+  document.getElementById('problemInput').focus();
   multiplication(number);
 }
 
@@ -144,6 +145,7 @@ function checkMul(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   multiplication(savedNumber);
 }
 
@@ -154,6 +156,7 @@ function startMulMixed(number){
   updateTimer();
   savedSign = "X";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkMulMixed()");
+  document.getElementById('problemInput').focus();
   multiplicationMixed(number);
 }
 
@@ -186,6 +189,7 @@ function checkMulMixed(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   multiplicationMixed(savedNumber);
 }
 
@@ -208,6 +212,7 @@ function startDiv(number){
   updateTimer();
   savedSign = "&#247";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkDiv()");
+  document.getElementById('problemInput').focus();
   division(number);
 }
 
@@ -216,6 +221,7 @@ function division(number){
   randNum = 0;
   if(rounds < maxRounds){
     randNum = Math.floor(Math.random() * randNumTotal)+1;
+    randNum = randNum * number;
     if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
       division(savedNumber);
     }else{
@@ -240,6 +246,7 @@ function checkDiv(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   division(savedNumber);
 }
 
@@ -250,6 +257,7 @@ function startDivMixed(number){
   updateTimer();
   savedSign = "&#247";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkDivMixed()");
+  document.getElementById('problemInput').focus();
   divisionMixed(number);
 }
 
@@ -258,6 +266,7 @@ function divisionMixed(number){
   randNum = 0;
   if(rounds < maxRounds){
     randNum = Math.floor(Math.random() * randNumTotal)+1;
+    randNum = randNum * savedNumber;
     if(!checkDoneAnswer(randNum) && rounds < randNumTotal){
       divisionMixed(savedNumber);
     }else{
@@ -282,6 +291,7 @@ function checkDivMixed(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   divisionMixed(savedNumber);
 }
 
@@ -308,6 +318,7 @@ function startAdd(number){
   updateTimer();
   savedSign = "+";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkAdd()");
+  document.getElementById('problemInput').focus();
   adding(number);
 }
 
@@ -340,6 +351,7 @@ function checkAdd(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   adding(savedNumber);
 }
 
@@ -350,6 +362,7 @@ function startAddMixed(number){
   updateTimer();
   savedSign = "+";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkAddMixed()");
+  document.getElementById('problemInput').focus();
   addingMixed(number);
 }
 
@@ -382,6 +395,7 @@ function checkAddMixed(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   addingMixed(savedNumber);
 }
 
@@ -413,6 +427,7 @@ function startSub(number){
   updateTimer();
   savedSign = "-";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkSub()");
+  document.getElementById('problemInput').focus();
   subtraction(number);
 }
 
@@ -445,6 +460,7 @@ function checkSub(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   subtraction(savedNumber);
 }
 
@@ -455,6 +471,7 @@ function startSubMixed(number){
   updateTimer();
   savedSign = "-";
   document.getElementById('submitProblemButton').setAttribute("onclick", "checkSubMixed()");
+  document.getElementById('problemInput').focus();
   subtractionMixed(number);
 }
 
@@ -487,6 +504,7 @@ function checkSubMixed(){
     wrongNumbers[numberWrong - 1] = rounds;
   }
   document.getElementById('problemInput').value = "";
+  document.getElementById('problemInput').focus();
   subtractionMixed(savedNumber);
 }
 
@@ -623,17 +641,29 @@ function updateTimer(){
 
 function updateSelectionText(){
   if(maxRounds == 20){
+    console.log("20");
     document.getElementById("selectionRounds").innerHTML = "20 Questions";
     document.getElementById("selectionTime").innerHTML = "1 Minute";
+    document.getElementById('201').className = "settingsHighlight";
+    document.getElementById('1003').className = "settingsStopHighlight";
   }else{
+    console.log("not20");
     document.getElementById("selectionRounds").innerHTML = "100 Questions";
     document.getElementById("selectionTime").innerHTML = "3 Minutes";
+    document.getElementById('1003').className = "settingsHighlight";
+    document.getElementById('201').className = "settingsStopHighlight";
   }
 
   if(randNumTotal == 10){
+    console.log("10");
     document.getElementById("selectionRandom").innerHTML = "1-10";
+    document.getElementById('1-10').className = "settingsHighlight";
+    document.getElementById('1-12').className = "settingsStopHighlight";
   }else{
+    console.log("not10");
     document.getElementById("selectionRandom").innerHTML = "1-12";
+    document.getElementById('1-12').className = "settingsHighlight";
+    document.getElementById('1-10').className = "settingsStopHighlight";
   }
 }
 

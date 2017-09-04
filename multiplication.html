@@ -41,7 +41,7 @@
         <tr>
           <td><input type="button" onclick="startMulMixed(0);" value="Mixed"></td>
           <td></td>
-          <td><input type="button" onclick="toggleSettingsDisplay(); toggleNavDisplay();" value="Settings"></td>
+          <td><input type="button" onclick="toggleSettingsDisplay(); toggleNavDisplay(); updateSelectionText();" value="Settings"></td>
         </tr>
       </table>
       <a href="index.html">Exit</a>
@@ -53,7 +53,8 @@
       <p><span id="firstNumber">first</span>
         <span id="sign">sign</span>
         <span id="secondNumber">second</span></p>
-        <input id="problemInput" type="text" placeholder="Type Answer Here"><br />
+        <input id="problemInput" type="text" placeholder="Type Answer Here" autofocus onkeydown="if (event.keyCode == 13)
+        {document.getElementById('submitProblemButton').click()}"><br />
         <input type="button" value="Submit" onclick="checkMul()" id="submitProblemButton">
         <input type="button" onclick="reset2()" value="Exit">
     </section>
@@ -66,14 +67,14 @@
           <td></td>
         </tr>
         <tr>
-          <td><input type="button" onclick="randNumTotal = 10; updateSelectionText();" value="1-10"></td>
+          <td><input id="1-10" class="settingsHighlight" type="button" onclick="randNumTotal = 10; updateSelectionText();" value="1-10"></td>
           <td></td>
-          <td><input type="button" onclick="randNumTotal = 12; updateSelectionText();" value="1-12"></td>
+          <td><input id="1-12" class="settingsStopHighlight" type="button" onclick="randNumTotal = 12; updateSelectionText();" value="1-12"></td>
         </tr>
         <tr>
-          <td><input class="smaller" type="button" onclick="timerCount = 60; savedTimerCount = 60; maxRounds = 20; updateSelectionText();" value="20 Questions 1 Minute"></td>
+          <td><input id="201" class="settingsHighlight" type="button" onclick="timerCount = 60; savedTimerCount = 60; maxRounds = 20; updateSelectionText();" value="20 Questions 1 Minute"></td>
           <td></td>
-          <td><input class="smaller" type="button" onclick="timerCount = 180; savedTimerCount = 180; maxRounds = 100; updateSelectionText();" value="100 Questions 3 Minutes"></td>
+          <td><input id="1003" class="settingsStopHighlight" type="button" onclick="timerCount = 180; savedTimerCount = 180; maxRounds = 100; updateSelectionText();" value="100 Questions 3 Minutes"></td>
         </tr>
         <tr>
           <td></td>
