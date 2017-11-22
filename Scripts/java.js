@@ -197,6 +197,7 @@ function checkMul(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -243,6 +244,7 @@ function checkMulMixed(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -296,6 +298,7 @@ function checkDiv(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -343,6 +346,7 @@ function checkDivMixed(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -395,6 +399,7 @@ function checkAdd(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -441,6 +446,7 @@ function checkAddMixed(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -493,6 +499,7 @@ function checkSub(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -537,6 +544,7 @@ function checkSubMixed(){
     wrongAnswers[numberWrong - 1] = randNum;
     wrongAnswers2[numberWrong - 1] = savedNumber;
     wrongNumbers[numberWrong - 1] = rounds;
+    studentAnswered[numberWrong - 1] = answer;
   }
   document.getElementById('problemInput').value = "";
   document.getElementById('problemInput').focus();
@@ -600,19 +608,19 @@ function DisplayWrong(){
   if(savedSign == "+"){
     document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
     document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] + wrongAnswers2[wrongAnswerSelection]).toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (studentAnswered[wrongAnswerSelection].toString()) + " / " +((wrongAnswers[wrongAnswerSelection] + wrongAnswers2[wrongAnswerSelection]).toString());
   }else if(savedSign == "-"){
     document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
     document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] - wrongAnswers2[wrongAnswerSelection]).toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (studentAnswered[wrongAnswerSelection].toString()) + " / " +((wrongAnswers[wrongAnswerSelection] - wrongAnswers2[wrongAnswerSelection]).toString());
   }else if(savedSign == "&#247"){
     document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
     document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] / wrongAnswers2[wrongAnswerSelection]).toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (studentAnswered[wrongAnswerSelection].toString()) + " / " +((wrongAnswers[wrongAnswerSelection] / wrongAnswers2[wrongAnswerSelection]).toString());
   }else if(savedSign == "X"){
     document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
     document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] * wrongAnswers2[wrongAnswerSelection]).toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (studentAnswered[wrongAnswerSelection].toString()) + " / " +((wrongAnswers[wrongAnswerSelection] * wrongAnswers2[wrongAnswerSelection]).toString());
   }else{
     document.getElementById('wrongCorrectAnswer').innerHTML = "Calculation Error";
   }
