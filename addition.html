@@ -11,6 +11,8 @@
       <h1>Math Magic</h1>
       <h3>A Sartell School District Learning Tool</h3>
     </header>
+
+    <!-- SELECT WHAT PROBLEMS YOU WANT HERE -->
     <section id="navigation2">
       <table>
         <tr>
@@ -47,6 +49,7 @@
       <a href="index.html">Exit</a>
     </section>
 
+    <!-- WHERE THE PROBLEM IS DISPLAYED -->
     <section id="problem">
       <h1>Question <span id="questionNumber"></span></h1>
       <p><span id="timer"></span> seconds left</p>
@@ -59,6 +62,7 @@
         <input type="button" onclick="reset2()" value="Exit">
     </section>
 
+    <!-- SETTINGS SCREEN -->
     <section id="settingsScreen">
       <table>
         <tr>
@@ -84,14 +88,16 @@
       </table>
     </section>
 
+    <!-- END SCORE SCREEN-->
     <section id="endScreen">
       <h1 id="testWrong">Congratulations</h1>
       <p><span id="percentHere"></span>%</p>
       <p>You got <span id="correctNum"></span> correct and <span id="wrongNum"></span> wrong.</p>
-      <input type="button" value="Show Wrong Answers" onclick="toggleWrongAnswerDisplay(); DisplayWrong();"><br /><br />
+      <input id="showWrongAnswersButton" type="button" value="Show Wrong Answers" onclick="toggleWrongAnswerDisplay(); DisplayWrong();"><br /><br />
       <input type="button" onclick="reset()" value="Exit">
     </section>
 
+    <!-- SCREEN THAT DISPLAYS WRONG ANSWERS ON CLICK -->
     <section id="wrongAnswersScreen">
       <h1>Answer #<span id="wrongAnswerNumberHere"></span></h1>
       <p>

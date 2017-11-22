@@ -1,34 +1,43 @@
+// VARIBLES
+
+// Display Bools
 var questionDisplayBool = false;
 var navigation2DisplayBool = true;
 var endScreenDisplayBool = false;
 var wrongAnswerDisplayBool = false;
 var settingsDisplayBool = false;
+var savedSign = "?";
+// Number of rounds
 var rounds = 0;
 var maxRounds = 20;
+// Answer Numbers
 var savedNumber = 0;
 var correctAnswer = 0;
 var answer = 0;
 var numberCorrect = 0;
 var numberWrong = 0;
+var wrongAnswerSelection = 0;
+// Answer Arrays
 var doneAnswers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var doneAnswers2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var wrongAnswers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var wrongAnswers2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var wrongNumbers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-var wrongAnswerSelection = 0;
+var studentAnswered = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+// Timer Varibles
 var timerCount = 60;
 var savedTimerCount = 60;
 var timing = false;
 var randNumTotal = 10;
 var randNum = 0;
-var savedSign = "?";
 
-function test(){
+//
+//
+//
 
-}
+//DISPLAY TOGGLES
 
-
-
+// Toggles Problem Display
 function toggleProblemDisplay(){
   if(questionDisplayBool){
     questionDisplayBool = false;
@@ -39,6 +48,7 @@ function toggleProblemDisplay(){
   }
 }
 
+// Toggle Navigation Display
 function toggleNavDisplay(){
   if(navigation2DisplayBool){
     navigation2DisplayBool = false;
@@ -49,6 +59,7 @@ function toggleNavDisplay(){
   }
 }
 
+// Toggle End Screen Display
 function endScreenDisplay(){
   if(endScreenDisplayBool){
     endScreenDisplayBool = false;
@@ -56,9 +67,20 @@ function endScreenDisplay(){
   }else if(!endScreenDisplayBool){
     endScreenDisplayBool = true;
     document.getElementById("endScreen").style.display = "block";
+    console.log("NW: " + numberWrong.toString());
+    if(numberWrong == 0){
+      document.getElementById("showWrongAnswersButton").style.backgroundColor = "#35424a";
+      document.getElementById("showWrongAnswersButton").value = "Great Job!";
+      document.getElementById("showWrongAnswersButton").disabled = true;
+    }else{
+      document.getElementById("showWrongAnswersButton").style.backgroundColor = "#148fce";
+      document.getElementById("showWrongAnswersButton").value = "Show Wrong Answers";
+      document.getElementById("showWrongAnswersButton").disabled = false;
+    } 
   }
 }
 
+// Toggle Wrong Answers Display
 function toggleWrongAnswerDisplay(){
   if(wrongAnswerDisplayBool){
     wrongAnswerDisplayBool = false;
@@ -69,6 +91,7 @@ function toggleWrongAnswerDisplay(){
   }
 }
 
+// Toggle Settings Display
 function toggleSettingsDisplay(){
   if(settingsDisplayBool){
     settingsDisplayBool = false;
@@ -79,13 +102,47 @@ function toggleSettingsDisplay(){
   }
 }
 
+//
+//
+//
 
+// NAVIGATION SYNTAX
 
+// Shows what you have selected
+// Update all text in navigation
+function updateSelectionText(){
+  if(maxRounds == 20){
+    console.log("20");
+    document.getElementById("selectionRounds").innerHTML = "20 Questions";
+    document.getElementById("selectionTime").innerHTML = "1 Minute";
+    document.getElementById('201').className = "settingsHighlight";
+    document.getElementById('1003').className = "settingsStopHighlight";
+  }else{
+    console.log("not20");
+    document.getElementById("selectionRounds").innerHTML = "100 Questions";
+    document.getElementById("selectionTime").innerHTML = "3 Minutes";
+    document.getElementById('1003').className = "settingsHighlight";
+    document.getElementById('201').className = "settingsStopHighlight";
+  }
 
+  if(randNumTotal == 10){
+    console.log("10");
+    document.getElementById("selectionRandom").innerHTML = "1-10";
+    document.getElementById('1-10').className = "settingsHighlight";
+    document.getElementById('1-12').className = "settingsStopHighlight";
+  }else{
+    console.log("not10");
+    document.getElementById("selectionRandom").innerHTML = "1-12";
+    document.getElementById('1-12').className = "settingsHighlight";
+    document.getElementById('1-10').className = "settingsStopHighlight";
+  }
+}
 
+//
+//
+//
 
-
-
+// QUESTION DISPLAY
 
 function displayQuestion(first, sign, second){
   //console.log(second.toString());
@@ -96,14 +153,11 @@ function displayQuestion(first, sign, second){
   console.log("End");
 }
 
+//
+//
+//
 
-
-
-
-
-
-
-
+// START OF MULTIPLICATION SYNTAX
 
 function startMul(number){
   toggleProblemDisplay();
@@ -149,6 +203,8 @@ function checkMul(){
   multiplication(savedNumber);
 }
 
+// MIXED MULTIPLICATION
+
 function startMulMixed(number){
   toggleProblemDisplay();
   toggleNavDisplay();
@@ -193,17 +249,13 @@ function checkMulMixed(){
   multiplicationMixed(savedNumber);
 }
 
+// END OF MULTIPLICATION 
 
+//
+//
+//
 
-
-
-
-
-
-
-
-
-
+// START OF DIVISION SYNTAX
 
 function startDiv(number){
   toggleProblemDisplay();
@@ -250,6 +302,8 @@ function checkDiv(){
   division(savedNumber);
 }
 
+// DIVISION MIXED
+
 function startDivMixed(number){
   toggleProblemDisplay();
   toggleNavDisplay();
@@ -295,21 +349,13 @@ function checkDivMixed(){
   divisionMixed(savedNumber);
 }
 
+// END OF DIVISION
 
+//
+//
+//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// START OF ADDITION SYNTAX
 
 function startAdd(number){
   toggleProblemDisplay();
@@ -355,6 +401,8 @@ function checkAdd(){
   adding(savedNumber);
 }
 
+// MIXED ADDITION
+
 function startAddMixed(number){
   toggleProblemDisplay();
   toggleNavDisplay();
@@ -399,26 +447,13 @@ function checkAddMixed(){
   addingMixed(savedNumber);
 }
 
+// END OF ADDITION
 
+//
+//
+//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// START OF SUBTRACTION SYNTAX
 
 function startSub(number){
   toggleProblemDisplay();
@@ -508,26 +543,16 @@ function checkSubMixed(){
   subtractionMixed(savedNumber);
 }
 
+// END OF SUNTRACTION
 
+//
+//
+//
 
+// ANSWER CHECKING
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Checks if current answer input was correct or incorrect
+// Adds to numberCorrect or numberWrong
 function checkAnswer(){
   if(answer == correctAnswer){
     numberCorrect++;
@@ -538,6 +563,8 @@ function checkAnswer(){
   }
 }
 
+// Checks if each answer from the toCheck array is correct or not
+// Returns true or false for each answer
 function checkDoneAnswer(toCheck){
   for(var i = 0; i < 20; i++){
     if(toCheck == doneAnswers[i]){
@@ -547,15 +574,12 @@ function checkDoneAnswer(toCheck){
   return true;
 }
 
+//
+//
+//
 
-
-
-
-
-
-
-
-
+// END SCREEN DISPLAY
+// Function is called from updateTimer() when your time runs out
 function displayEnd(){
   console.log(numberCorrect);
   console.log(maxRounds);
@@ -566,10 +590,42 @@ function displayEnd(){
   toggleProblemDisplay();
 }
 
+// Displays wrong answers
+// Called from next buttons and siaplay wrong answer button
+// on the end screen
+function DisplayWrong(){
+  document.getElementById("wrongSign").innerHTML = savedSign;
 
+  document.getElementById("wrongAnswerNumberHere").innerHTML = wrongNumbers[wrongAnswerSelection].toString();
+  if(savedSign == "+"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] + wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "-"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] - wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "&#247"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] / wrongAnswers2[wrongAnswerSelection]).toString();
+  }else if(savedSign == "X"){
+    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
+    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
+    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] * wrongAnswers2[wrongAnswerSelection]).toString();
+  }else{
+    document.getElementById('wrongCorrectAnswer').innerHTML = "Calculation Error";
+  }
+}
 
+//
+//
+//
 
+// RESET VARIBLES AND OTHER SYNTAX
 
+// Resets the syntax
+//I don't know why there is two
 function reset(){
   endScreenDisplay();
   toggleNavDisplay();
@@ -618,20 +674,21 @@ function reset2(){
   }
 }
 
+//
+//
+//
 
+// TIMER SYNTAX
 
-
-
-
-
-
-
+// Called when game starts
 function updateTimer(){
   if (timerCount < 1){
+    // If timer isn't 0
     numberWrong = numberWrong + ((maxRounds + 1) - rounds);
     displayEnd();
   }else{
     if(timing){
+      // Start timeout() and continue runing function 
       document.getElementById('timer').innerHTML = timerCount;
       timerCount--;
       setTimeout(updateTimer, 1000);
@@ -639,55 +696,6 @@ function updateTimer(){
   }
 }
 
-function updateSelectionText(){
-  if(maxRounds == 20){
-    console.log("20");
-    document.getElementById("selectionRounds").innerHTML = "20 Questions";
-    document.getElementById("selectionTime").innerHTML = "1 Minute";
-    document.getElementById('201').className = "settingsHighlight";
-    document.getElementById('1003').className = "settingsStopHighlight";
-  }else{
-    console.log("not20");
-    document.getElementById("selectionRounds").innerHTML = "100 Questions";
-    document.getElementById("selectionTime").innerHTML = "3 Minutes";
-    document.getElementById('1003').className = "settingsHighlight";
-    document.getElementById('201').className = "settingsStopHighlight";
-  }
-
-  if(randNumTotal == 10){
-    console.log("10");
-    document.getElementById("selectionRandom").innerHTML = "1-10";
-    document.getElementById('1-10').className = "settingsHighlight";
-    document.getElementById('1-12').className = "settingsStopHighlight";
-  }else{
-    console.log("not10");
-    document.getElementById("selectionRandom").innerHTML = "1-12";
-    document.getElementById('1-12').className = "settingsHighlight";
-    document.getElementById('1-10').className = "settingsStopHighlight";
-  }
-}
-
-function DisplayWrong(){
-  document.getElementById("wrongSign").innerHTML = savedSign;
-
-  document.getElementById("wrongAnswerNumberHere").innerHTML = wrongNumbers[wrongAnswerSelection].toString();
-  if(savedSign == "+"){
-    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
-    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] + wrongAnswers2[wrongAnswerSelection]).toString();
-  }else if(savedSign == "-"){
-    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
-    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] - wrongAnswers2[wrongAnswerSelection]).toString();
-  }else if(savedSign == "&#247"){
-    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
-    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] / wrongAnswers2[wrongAnswerSelection]).toString();
-  }else if(savedSign == "X"){
-    document.getElementById("wrongSecondNumber").innerHTML = wrongAnswers2[wrongAnswerSelection].toString();
-    document.getElementById("wrongFirstNumber").innerHTML = wrongAnswers[wrongAnswerSelection].toString();
-    document.getElementById('wrongCorrectAnswer').innerHTML = (wrongAnswers[wrongAnswerSelection] * wrongAnswers2[wrongAnswerSelection]).toString();
-  }else{
-    document.getElementById('wrongCorrectAnswer').innerHTML = "Calculation Error";
-  }
-}
+//
+//
+//
