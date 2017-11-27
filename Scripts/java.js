@@ -633,7 +633,7 @@ function DisplayWrong(){
 // RESET VARIBLES AND OTHER SYNTAX
 
 // Resets the syntax
-//I don't know why there is two
+//End of Quiz
 function reset(){
   endScreenDisplay();
   toggleNavDisplay();
@@ -659,6 +659,8 @@ function reset(){
   }
 }
 
+//Resets the syntax
+//When Exited to main screen
 function reset2(){
   toggleNavDisplay();
   toggleProblemDisplay();

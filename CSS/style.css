@@ -3,6 +3,12 @@
   border: 1px solid black;
 }
 */
+/*
+  COLORS
+  Gray:35424a
+  Blue:148fce
+
+*/
 
 body {
   font-family: arial, sans-serif;
@@ -40,9 +46,7 @@ header h2{
 .indexNav{
   background: #35424a;
   border: #148fce 0.3125em solid;
-  margin-top: 1.25em;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin: 3%;
 }
 .indexNav a {
   color: #ffffff;
@@ -64,7 +68,7 @@ header h2{
   min-width: 100%;
   min-height: 70%;
   max-height: 70%;
-  margin-top: 40px;
+  margin-top: 2em;
   border-spacing: 0px 1.25em;
 }
 
