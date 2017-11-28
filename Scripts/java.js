@@ -6,7 +6,9 @@ var navigation2DisplayBool = true;
 var endScreenDisplayBool = false;
 var wrongAnswerDisplayBool = false;
 var settingsDisplayBool = false;
+var quizInformationDisplayed = false;
 var savedSign = "?";
+var savedQuizName= "NULL";
 // Number of rounds
 var rounds = 0;
 var maxRounds = 20;
@@ -160,6 +162,7 @@ function displayQuestion(first, sign, second){
 // START OF MULTIPLICATION SYNTAX
 
 function startMul(number){
+  savedQuizName = "X" + number.toString();
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -207,6 +210,7 @@ function checkMul(){
 // MIXED MULTIPLICATION
 
 function startMulMixed(number){
+  savedQuizName = "Mixed Multiplication";
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -260,6 +264,7 @@ function checkMulMixed(){
 // START OF DIVISION SYNTAX
 
 function startDiv(number){
+  savedQuizName = "&#247" + number.toString();
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -308,6 +313,7 @@ function checkDiv(){
 // DIVISION MIXED
 
 function startDivMixed(number){
+  savedQuizName = "Mixed Division";
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -362,6 +368,7 @@ function checkDivMixed(){
 // START OF ADDITION SYNTAX
 
 function startAdd(number){
+  savedQuizName = "+" + number.toString();
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -409,6 +416,7 @@ function checkAdd(){
 // MIXED ADDITION
 
 function startAddMixed(number){
+  savedQuizName = "Mixed Addition";
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -462,6 +470,7 @@ function checkAddMixed(){
 // START OF SUBTRACTION SYNTAX
 
 function startSub(number){
+  savedQuizName = "-" + number.toString();
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -507,6 +516,7 @@ function checkSub(){
 }
 
 function startSubMixed(number){
+  savedQuizName = "Mixed Subtraction";
   toggleProblemDisplay();
   toggleNavDisplay();
   timing = true;
@@ -596,6 +606,19 @@ function displayEnd(){
   document.getElementById('percentHere').innerHTML = Math.ceil((numberCorrect/maxRounds)*100).toString();
   endScreenDisplay();
   toggleProblemDisplay();
+}
+
+function toggleShowQuizInfo(){
+  if(!quizInformationDisplayed){
+    quizInformationDisplayed = true;
+    document.getElementById("showQuizInformationButton").style.backgroundColor = "#35424a";
+    document.getElementById("showQuizInformationButton").value = "Quiz on " + savedQuizName.toString() + " and " + maxRounds.toString() + " questions in " + savedTimerCount.toString() + " seconds.";
+  }
+  else{
+    quizInformationDisplayed = false;
+    document.getElementById("showQuizInformationButton").style.backgroundColor = "#148fce";
+    document.getElementById("showQuizInformationButton").value = "Show Quiz Information";
+  }
 }
 
 // Displays wrong answers
